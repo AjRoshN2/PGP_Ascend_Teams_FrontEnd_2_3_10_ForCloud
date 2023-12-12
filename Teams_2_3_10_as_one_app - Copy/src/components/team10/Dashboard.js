@@ -28,7 +28,7 @@ const Dashboard = (props) => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`http://172.203.226.233:8765/userdashboard/api/user/${encodeURIComponent(emailId)}`);
+        const response = await axios.get(`http://172.203.226.233:9903/userdashboard/api/user/${encodeURIComponent(emailId)}`);
         setUserData(response.data);
       } catch (error) {
         console.log(error);
