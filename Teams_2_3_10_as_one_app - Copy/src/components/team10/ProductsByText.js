@@ -8,7 +8,7 @@ function ProductsByText( props ) {
 
   useEffect(() => {
     // console.log('Fetching data for text:', props.text);
-    axios.get(`/api/products/getByText/${props.text}`)
+    axios.get(`http://172.203.226.233:8765/api/products/getByText/${props.text}`)
       .then((response) => {
         // console.log('API response:', response.data);
         setProductData(response.data);
