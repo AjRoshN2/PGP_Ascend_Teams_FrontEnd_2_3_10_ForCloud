@@ -9,7 +9,7 @@ function ProductsById(props) {
 
   useEffect(() => {
     // console.log("Product ID: " + props.productId)
-    axios.get(`http://172.203.226.233:9903/api/products/getByID/${props.productId}`)
+    axios.get(`http://172.203.226.233:8765/api/products/getByID/${props.productId}`)
       .then((response) => {
         setProductData(response.data.data);
       })
