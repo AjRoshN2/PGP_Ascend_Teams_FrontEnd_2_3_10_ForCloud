@@ -1,0 +1,106 @@
+
+.addCartButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .addCartButton {
+    border-radius: 12px;
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-style: oblique;
+    vertical-align: middle;
+  }
+
+  .addCartButtonDis {
+    border-radius: 12px;
+    background-color: #C0C0C0;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-style: oblique;
+    vertical-align: middle;
+  }
+
+  .addCartDiv1 {
+    border-radius: 20px;
+    background: #008CBA;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    display: inline-block;
+    line-height: 10px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+  }
+
+  .addCartDiv2 {
+    border-radius: 80px;
+    background: #C0C0C0;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    display: inline-block;
+    line-height: 10px; 
+    text-align: center;
+    color: white;
+    font-size: 12px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 150px;
+    width: 200px;
+    padding-left: 10px;
+}
+
+.saveButton{
+  border-radius: 20px;
+  background: #008CBA;
+  padding: 10px;
+  width: 200px;
+  height: 50px;
+  
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+
+
+  .hideMe {
+    -moz-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
+
