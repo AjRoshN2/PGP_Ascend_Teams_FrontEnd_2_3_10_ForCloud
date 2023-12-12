@@ -20,6 +20,7 @@ import {
 
 import { useState, useEffect } from 'react';
 import ProductDetails from "./components/team3/ProductDetails"
+import DemoLogin from './components/team3/DemoLogin';
 
 function App() {
 
@@ -53,7 +54,8 @@ function App() {
         <Route path="/Dashboard/:emailId" element={<Dashboard />} />
         <Route path="/ProductsById/:productId" element={<ProductsById />} />
         <Route path="/ProductsByText/:text" element={<ProductsByText />} />
-
+        <Route path="/demologin" element={<DemoLogin />} />
+        <Route path="/demoprod"  element={<ProductDetails productId={1}/>}  />
       </Routes>
 
       {/* {openProdPage==true  && <ProductDetails productId={prodId} selectPage={selectSearchPage}/>}

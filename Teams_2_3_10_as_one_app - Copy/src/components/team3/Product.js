@@ -41,7 +41,7 @@ return (
 </div>
 
 
-<AddCart  prodId={props.product.id} cart={props.cart} handleCount={props.handleCount} disableButton={props.product.inventryStatus==="AVAILABLE"?false:true}/>
+<AddCart  prodId={props.product.id} cart={props.cart} wishList={props.wishList} handleCount={props.handleCount}  disableButton={props.product.inventryStatus==="AVAILABLE"?false:true}/>
 
 
 </div> 

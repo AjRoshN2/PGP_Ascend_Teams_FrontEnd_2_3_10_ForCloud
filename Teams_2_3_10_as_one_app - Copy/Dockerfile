@@ -19,6 +19,12 @@ RUN npm i @fortawesome/react-fontawesome --legacy-peer-deps
 RUN npm install react-responsive-carousel --legacy-peer-deps
 RUN npm install axios --legacy-peer-deps
 
+RUN npm install react-responsive-carousel --legacy-peer-deps
+RUN npm install axios --legacy-peer-deps
+
+RUN npm i react-cookie --legacy-peer-deps
+RUN npm i react-router-dom --legacy-peer-deps
+
 # Install the rest of the project dependencies
 RUN npm ci --legacy-peer-deps
 

@@ -46,15 +46,16 @@
     font-style: normal;
     font-size: 20px;
     text-indent:0px;
-    width: 60%;
+    width: 90%;
     padding-left: 1rem;
     font-family: -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
+    overflow: hidden;
   }
 
   .addCartDiv{
     vertical-align: bottom;
     text-align: center;
-    width: 30%;
+    width: 26%;
     display: inline-block;
     margin-right: auto;
     margin: auto;
@@ -66,11 +67,10 @@
     vertical-align: top;
     text-align: left;
     margin-right: auto;
-    width: 60%;
+    width: 70%;
     padding-left: 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
-    font-size: 20px;
 
+    overflow: hidden;
   }
 
 /*   .specificationDiv{
