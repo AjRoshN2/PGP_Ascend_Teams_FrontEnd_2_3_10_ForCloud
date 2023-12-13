@@ -37,7 +37,7 @@ function DemoLogin() {
 
     try{
    //await axios.post("http://172.203.226.233:9200/api/auth/signin", loginCred,{withCredentials: true}).then((response) => {
-    await axios.post("http://172.203.226.233:8765/api/auth/signin", loginCred,{withCredentials: true}).then((response) => {
+    await axios.post("http://172.203.226.233:9200/api/auth/signin", loginCred,{withCredentials: true}).then((response) => {
   //const cookie = new Cookies();
   console.log("Header is "+response.headers['Set-Cookie']); 
   //console.log(response.status);

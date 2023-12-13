@@ -74,7 +74,7 @@ class ProductDetails extends React.Component {
 	async getCart(){
 		let cartData ={};
 		try{
-		await axios.get(`http://172.203.226.233:8765/api/auth/getcart`,{withCredentials: true})
+		await axios.get(`http://172.203.226.233:9200/api/auth/getcart`,{withCredentials: true})
 		//await axios.get(`http://172.203.226.233:9200/api/auth/getcart`,{withCredentials: true})
 		.then(response => {
 			cartData = response.data;
@@ -92,7 +92,7 @@ class ProductDetails extends React.Component {
 		let wishData =[];
 		try{
 		let user = document.cookie.replace(/(?:(?:^|.*;\s*)user\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-		await axios.get(`http://172.203.226.233:8765/api/auth/wishlistall`,{withCredentials: true, headers: {"content-type": "application/json"}})
+		await axios.get(`http://172.203.226.233:9200/api/auth/wishlistall`,{withCredentials: true, headers: {"content-type": "application/json"}})
 		//await axios.get(`http://172.203.226.233:9200/api/auth/wishlistall`,{withCredentials: true, headers: {"content-type": "application/json"}})
 		.then(response => {
 			wishData = response.data;

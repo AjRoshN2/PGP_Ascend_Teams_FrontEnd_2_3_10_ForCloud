@@ -78,7 +78,7 @@ function AddCart(props){
         }
     }
         try{
-       await axios.post("http://172.203.226.233:8765/api/auth/addcart", newCart,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
+       await axios.post("http://172.203.226.233:9200/api/auth/addcart", newCart,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
       //  await axios.post("http://172.203.226.233:9200/api/auth/addcart", newCart,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
       console.log(response.status);
 
@@ -127,7 +127,7 @@ const  addToWishlist = async ()=>{
 
 
         try{
-       await axios.post("http://172.203.226.233:8765/api/auth/addwishlist", newWishList,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
+       await axios.post("http://172.203.226.233:9200/api/auth/addwishlist", newWishList,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
        // await axios.post("http://172.203.226.233:9200/api/auth/addwishlist", newWishList,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
       console.log(response.status, response.data.token);
       //setAddSuccess(true);
@@ -150,7 +150,7 @@ const removeFromWishList=async()=>{
 
 
     try{
-   await axios.delete("http://172.203.226.233:8765/api/auth/deletewishlist",{withCredentials: true, headers: {"content-type": "application/json"}, data:removeWishList}).then((response) => {
+   await axios.delete("http://172.203.226.233:9200/api/auth/deletewishlist",{withCredentials: true, headers: {"content-type": "application/json"}, data:removeWishList}).then((response) => {
    // await axios.delete("http://172.203.226.233:9200/api/auth/deletewishlist",{withCredentials: true, headers: {"content-type": "application/json"}, data:removeWishList}).then((response) => {
   console.log(response.status);
   //setAddSuccess(true);
