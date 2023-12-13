@@ -38,48 +38,61 @@ function AddCart(props){
         let prodFound=false;
         let newCart ={};
 
-        if(JSON.stringify(props.cart)!="{}"){
-        newCart = {
 
-            "id":props.cart.cartId,
-            "email":cookies.user,
-            "products":
-
-                props.cart.products.map((product)=>{
-
-                    if(product.productId==props.prodId){
-                       const updatedProd={
-                            "productId":product.productId,
-                            "quantity":(product.quantity<0 && qty>0)?1:product.quantity+qty
-                        }
-                        prodFound=(product.quantity<=0 && qty<0)?false:true;
-                        return updatedProd;
-                    }             
-                    else
-                        return product;
-
-
-                })
-
-            
-        };
-
-        if(prodFound===false && qty>0){
-
-            const newProd={
-                "productId":''+props.prodId,
+        if(JSON.stringify(props.cart)!="{}" && JSON.stringify(props.cart)!='""'){
+            newCart = {
+    
+                "id":props.cart.cartId,
                 "email":cookies.user,
-                "quantity":qty
+                "products":
+    
+                    props.cart.products.map((product)=>{
+    
+                        if(product.productId==props.prodId){
+                           const updatedProd={
+                                "productId":product.productId,
+                                "quantity":(product.quantity<0 && qty>0)?1:product.quantity+qty
+                            }
+                            prodFound=(product.quantity<=0 && qty<0)?false:true;
+                            return updatedProd;
+                        }             
+                        else
+                            return product;
+    
+    
+                    })
+    
+                
+            };
+    
+            if(prodFound===false && qty>0){
+    
+                const newProd={
+                    "productId":''+props.prodId,
+                    "email":cookies.user,
+                    "quantity":qty
+                }
+    
+                newCart={...newCart,"products":[newProd]}
+                
+                console.log("New cart is "+JSON.stringify(newCart));
             }
-
-            newCart={...newCart,"products":[newProd]}
-            
-            console.log("New cart is "+JSON.stringify(newCart));
+        }
+        else{
+            newCart = {
+    
+                "id":props.cart.cartId,
+                "email":cookies.user,
+                "products":[{
+                    "productId":''+props.prodId,
+                    "email":cookies.user,
+                    "quantity":qty
+                }]
         }
     }
         try{
-       await axios.post("http://172.203.226.233:9200/api/auth/addcart", newCart,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
-      //  await axios.post("http://172.203.226.233:9200/api/auth/addcart", newCart,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
+       await axios.post("http://localhost:9200/api/auth/addcart", newCart,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
+      //  await axios.post("http://ascend-pgp-team2.eastus.cloudapp.azure.com:9200/api/auth/addcart", newCart,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
       console.log(response.status);
 
       if(response.status==401){
@@ -127,8 +140,8 @@ const  addToWishlist = async ()=>{
 
 
         try{
-       await axios.post("http://172.203.226.233:9200/api/auth/addwishlist", newWishList,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
-       // await axios.post("http://172.203.226.233:9200/api/auth/addwishlist", newWishList,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
+       await axios.post("http://localhost:9200/api/auth/addwishlist", newWishList,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
+       // await axios.post("http://ascend-pgp-team2.eastus.cloudapp.azure.com:9200/api/auth/addwishlist", newWishList,{withCredentials: true, headers: {"content-type": "application/json"}}).then((response) => {
       console.log(response.status, response.data.token);
       //setAddSuccess(true);
       setAddWishListStatus(true);
@@ -150,8 +163,8 @@ const removeFromWishList=async()=>{
 
 
     try{
-   await axios.delete("http://172.203.226.233:9200/api/auth/deletewishlist",{withCredentials: true, headers: {"content-type": "application/json"}, data:removeWishList}).then((response) => {
-   // await axios.delete("http://172.203.226.233:9200/api/auth/deletewishlist",{withCredentials: true, headers: {"content-type": "application/json"}, data:removeWishList}).then((response) => {
+   await axios.delete("http://localhost:9200/api/auth/deletewishlist",{withCredentials: true, headers: {"content-type": "application/json"}, data:removeWishList}).then((response) => {
+   // await axios.delete("http://ascend-pgp-team2.eastus.cloudapp.azure.com:9200/api/auth/deletewishlist",{withCredentials: true, headers: {"content-type": "application/json"}, data:removeWishList}).then((response) => {
   console.log(response.status);
   //setAddSuccess(true);
   setAddWishListStatus(false);

@@ -37,7 +37,7 @@ function ProductComparison(props){
         console.log("Going to call related Products "+relatedProds);
      
         try{
-      const resp = await axios.get(`http://172.203.226.233:8765/api/products/getByText/`+category);  
+      const resp = await axios.get(`http://ascend-pgp-team2.eastus.cloudapp.azure.com:8765/api/products/getByText/`+category);  
      // const resp = await axios.get(`http://localhost:9200/api/products/getByText/`+category);  
       const  data = resp.data;
         

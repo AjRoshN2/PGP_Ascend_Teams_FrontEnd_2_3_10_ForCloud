@@ -52,8 +52,8 @@ class ProductDetails extends React.Component {
 				
 				let productData={}
 			
-				//await axios.get(`http://172.203.226.233:9200/api/products/getByID/`+this.state.productId)
-				await axios.get(`http://172.203.226.233:8765/api/products/getByID/`+this.state.productId)
+				//await axios.get(`http://ascend-pgp-team2.eastus.cloudapp.azure.com:9200/api/products/getByID/`+this.state.productId)
+				await axios.get(`http://ascend-pgp-team2.eastus.cloudapp.azure.com:8765/api/products/getByID/`+this.state.productId)
 			.then(response => {
 					 productData = response.data.data;
 					console.log("Product is "+productData);
@@ -74,14 +74,15 @@ class ProductDetails extends React.Component {
 	async getCart(){
 		let cartData ={};
 		try{
-		await axios.get(`http://172.203.226.233:9200/api/auth/getcart`,{withCredentials: true})
-		//await axios.get(`http://172.203.226.233:9200/api/auth/getcart`,{withCredentials: true})
+		await axios.get(`http://localhost:9200/api/auth/getcart`,{withCredentials: true})
+		//await axios.get(`http://ascend-pgp-team2.eastus.cloudapp.azure.com:9200/api/auth/getcart`,{withCredentials: true})
 		.then(response => {
 			cartData = response.data;
 			
 		})
 	}
 	catch(error){
+		cartData ={};
 		console.log(error);
 	}
 
@@ -92,8 +93,8 @@ class ProductDetails extends React.Component {
 		let wishData =[];
 		try{
 		let user = document.cookie.replace(/(?:(?:^|.*;\s*)user\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-		await axios.get(`http://172.203.226.233:9200/api/auth/wishlistall`,{withCredentials: true, headers: {"content-type": "application/json"}})
-		//await axios.get(`http://172.203.226.233:9200/api/auth/wishlistall`,{withCredentials: true, headers: {"content-type": "application/json"}})
+		await axios.get(`http://localhost:9200/api/auth/wishlistall`,{withCredentials: true, headers: {"content-type": "application/json"}})
+		//await axios.get(`http://ascend-pgp-team2.eastus.cloudapp.azure.com:9200/api/auth/wishlistall`,{withCredentials: true, headers: {"content-type": "application/json"}})
 		.then(response => {
 			wishData = response.data;
 			
